@@ -1,0 +1,50 @@
+server:
+  port: 9090
+
+spring:
+  security:
+    user:
+      name: vehicle-hire-platform-db
+      password: vehicle-hire-platform-db
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/vehicle-hire-platform-db
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: projects060606@gmail.com
+    password: srtapagkmoxrmtjx
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+#  Swagger...
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  show-actuator: false
+
+java17:
+  jwt:
+    secret-key: l6B5lk6GBovFp
+    issuer: Java17
